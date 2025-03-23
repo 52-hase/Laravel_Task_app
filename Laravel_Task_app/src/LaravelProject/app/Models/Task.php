@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;  // Carbon ライブラリを名前空間でインポートする
 
 class Task extends Model
 {
@@ -45,5 +46,18 @@ class Task extends Model
         }
 
         return self::STATUS[$status]['class'];
+    }
+
+   
+
+    /**
+     * 整形した期限日のアクセサメソッド
+     * 
+     * @return string
+     */
+    public function getFormattedDueDateAttribute()
+    {
+        return Carbon::createFromFormat('Y-m-d', $this->attributes['due_date'])
+            ->format('Y/m/d');
     }
 }
