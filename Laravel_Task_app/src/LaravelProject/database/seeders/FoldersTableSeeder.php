@@ -20,7 +20,7 @@ class FoldersTableSeeder extends Seeder
     public function run()
     {
         // テストデータを3つ作成する
-        $titles = ['プライベート', '仕事', '旅行', '趣味'];
+        $titles = ['プライベート', '仕事', '旅行'];
         // 上記のタイトルでテーブル行を3つ挿入するループを実行する
         foreach ($titles as $title) {
             // foldersテーブルにアクセスして行を挿入する
