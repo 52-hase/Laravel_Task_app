@@ -23,7 +23,7 @@ class TaskController extends Controller
         $folder = Folder::find($id);
 
         // 指定されたフォルダに紐づくタスクを取得
-        $tasks = Task::where('folder_id', $folder->id)->get();
+        $tasks = $folder->tasks()->get();
 
         // tasks/index ビューにデータを渡して表示
         return view('tasks/index', [
