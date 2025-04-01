@@ -1,0 +1,5 @@
+.DS_Store
+.docker
+.gitconfigphpmyadmin/sessions/
+vendor/
+node_modules/
