@@ -44,6 +44,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
+    platform: linux/amd64  # MacのARM64に対応させる
     container_name: "phpmyadmin_test"
     environment:
       - PMA_ARBITRARY=1 # サーバ設定：サーバーをローカル以外も指定
